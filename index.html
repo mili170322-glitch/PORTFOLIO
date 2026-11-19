@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Define idioma, codificación, adaptación móvil y descripción para buscadores. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Desarrolladora web</title>
+    <meta name="description" content="Portfolio de Milagros Frias, desarrolladora web front-end y full stack.">
+    <!-- Preconecta con Google Fonts y carga solo los usados por el diseño. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- El encabezado permanece visible; el nombre y los enlaces llevan a secciones de esta página. -->
+    <header class="site-header">
+      <div class="container">
+        <nav class="nav" aria-label="Principal">
+          <a class="brand" href="#inicio">Milagros Frias</a>
+          <!-- details/summary crea un menú desplegable nativo, sin JavaScript para abrirlo. -->
+          <details class="nav-menu">
+            <summary aria-label="Abrir o cerrar el menú de navegación">
+              <span class="menu-icon" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </summary>
+            <ul>
+              <li><a href="#proyectos">Proyectos</a></li>
+              <li><a href="#habilidades">Habilidades</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </details>
+        </nav>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <!-- Presenta a Milagros y muestra sus datos de perfil con formato similar a JSON. -->
+      <section class="hero" aria-labelledby="titulo">
+        <div class="container">
+          <div class="row">
+            <div class="col col-md-7">
+              <h1 id="titulo">Desarrolladora web que convierte ideas en sitios rápidos y accesibles.</h1>
+              <p class="lead">Soy Milagros, desarrolladora front-end. Construyo interfaces con HTML semántico, CSS y JavaScript.</p>
+            </div>
+            <div class="col col-md-5">
+              <figure class="code" aria-label="Resumen del perfil en formato JSON">
+                <div class="code-bar" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <pre><code>{
+  <span class="k">"nombre"</span>: <span class="s">"Milagros Frias"</span>,
+  <span class="k">"rol"</span>: <span class="s">"Full stack developer"</span>,
+  <span class="k">"stack"</span>: [<span class="s">"HTML"</span>, <span class="s">"CSS"</span>, <span class="s">"JavaScript"</span>],
+  <span class="k">"disponible"</span>: true
+}</code></pre>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tarjeta de proyecto con descripción. -->
+      <section id="proyectos" aria-labelledby="t-proyectos">
+        <div class="container">
+          <h2 id="t-proyectos">Proyectos</h2>
+          <div class="row">
+            <div class="col col-md-4">
+              <article class="card">
+                <div class="project-visual v2" role="img" aria-label="Vista previa de la receta">Tortilla de papa</div>
+                <h3>Receta</h3>
+                <p>Una receta sencilla para preparar un plato delicioso.</p>
+                <div class="links">
+                  <a href="receta/index.html">Ver sitio</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lista de habilidades: cada término (dt) se relaciona con su descripción (dd). -->
+      <section id="habilidades" class="skills" aria-labelledby="t-habilidades">
+        <div class="container">
+          <div class="row">
+            <div class="col col-md-5">
+              <h2 id="t-habilidades">Habilidades</h2>
+              <p>Combino CSS escrito a mano con Bootstrap según lo que pida cada proyecto: prototipos rápidos o diseños a medida.</p>
+            </div>
+            <div class="col col-md-7">
+              <dl>
+                <dt>Desarrollo web</dt>
+                <dd>HTML, CSS y Bootstrap</dd>
+                <dt>Programación</dt>
+                <dd>JavaScript</dd>
+                <dt>Datos y herramientas</dt>
+                <dd>Vibecoding, Git y GitHub</dd>
+                <dt>Calidad</dt>
+                <dd>Accesibilidad y rendimiento web</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Muestra el correo como texto; el botón abre Gmail para redactar un mensaje
+           dirigido a esa dirección en una pestaña nueva. -->
+      <section id="contacto" class="contact" aria-labelledby="t-contacto">
+        <div class="container">
+          <h2 id="t-contacto">Contacto</h2>
+          <p>¿Tenés un proyecto o una oferta de trabajo? Escribime y te respondo en menos de 48 horas.</p>
+          <address>
+            <p>mili170322@gmail.com</p>
+            <a class="btn btn-primary btn-small" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mili170322@gmail.com" target="_blank" rel="noopener noreferrer">Enviar un correo</a>
+          </address>
+        </div>
+      </section>
+    </main>
+
+    <!-- Pie de página con créditos del portfolio. -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2026 Milagros Frias. Hecho con HTML y CSS.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Reúne los enlaces del menú para asignarles el mismo comportamiento.
+      const menuLinks = document.querySelectorAll(".nav-menu a");
+
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          // Cierra el <details> que contiene el enlace sin cancelar la navegación.
+          link.closest(".nav-menu").open = false;
+        });
+      });
+    </script>
+  </body>
+</html>
